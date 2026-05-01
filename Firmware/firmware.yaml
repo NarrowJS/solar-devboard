@@ -1,0 +1,32 @@
+esphome:
+  name: "solar-devboard"
+  friendly_name: "ESP32-C6 Solar Devboard"
+
+esp32:
+  board: esp32-c6-devkitm-1
+  variant: esp32c6
+  framework:
+    type: esp-idf
+    version: 5.3.1
+
+sensor:
+  - platform: adc
+    pin: GPIO8
+    name: "Battery Voltage"
+    update_interval: 60s
+    unit_of_measurement: V
+    accuracy_decimals: 2
+    attentuation: 11db
+    filters:
+      - multiply: 4.2
+  - platform: dht
+    pin: GPIO5
+    temperature:
+      name: "Outdoor temperature"
+    update_interval: 60s
+
+ota:
+  - platform: esphome
+
+logger:
+  level: DEBUG
