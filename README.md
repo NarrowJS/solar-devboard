@@ -6,6 +6,7 @@ An ESP32 C6 mini based devboard that combines zigbee/wifi with solar and lipo ch
 ## Features
 - 3.7v Lipo charging circuit and JST connector
 - Support for 3v - 18v solar panels
+- Reverse polarity protection on solar panel connector
 - ADC for lipo charge monitoring
 - Power path for charging while on usb-c power
 - Extremely compact form factor
